@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="colorlib-blog" data-section="blog">
+        <div class="colorlib-narrow-content">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                    <span class="heading-meta">O'qing</span>
+                    <h2 class="colorlib-heading">mening postlarim</h2>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+                        {% for posts in post %}
+                        <div class="blog-entry">
+                            <a class="blog-img"><img src="{{ posts.image.url }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+                            <div class="desc">
+                                <span><small>April 14, 2018 </small> | <small>  </small> | <small> <i class="icon-bubble3"></i> 5</small></span>
+                                <h3><a >{{ posts.title }}</a></h3>
+                                <p>{{ posts.body }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                
+                
+            <div class="row">
+                <div class="col-md-12 animate-box">
+                    <p><a href="{% url 'home'  %}" class="btn btn-primary btn-lg btn-load-more">bosh sahifaga qaytish <i class="icon-reload"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
