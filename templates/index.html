@@ -167,87 +167,6 @@
 				</div>
 			</div>
 
-			{% comment %} <section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading animate-box">My Skills</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Photoshop</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>jQuery</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="60"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>HTML5</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>CSS3</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-								    <span>90%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>WordPress</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>SEO</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> {% endcomment %}
 
 			<section class="colorlib-education" data-section="education">
 				<div class="colorlib-narrow-content">
@@ -297,8 +216,10 @@
 						</div>
 					</div>
 					<div class="row">
+						
 						<div class="col-md-12">
 				         <div class="timeline-centered">
+							{% for experiences in experience %}
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 
@@ -307,60 +228,16 @@
 					               </div>
 
 					               <div class="timeline-label">
-					                  <h2><a href="#">Python back-end dasturchi</a> <span>2023-2024</span></h2>
-					                  <p>Farobiy IT academy bitiruvchisi</p>
+					                  <h2><a href="#"><strong>Lavozim:</strong> {{ experiences.position_name }}</a> | <span>{{ experiences.working_period }}</span></h2>
+					                  <p><strong>Kompaniya:</strong> {{ experiences.company_name }}</p>
+									  <p><strong>Vazifalarim:</strong> {{ experiences.tasks }}</p>
+									  <p><strong>Ko'nikmalarim:</strong> {{ experiences.skills }}</p>
 					               </div>
 					            </div>
 					         </article>
+							 {% endfor %}
 
 
-					         <!-- <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Front End Developer at Google Company</a> <span>2017-2018</span></h2>
-					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">System Analyst</a> <span>2017-2018</span></h2>
-					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Creative Designer</a> <span>2017-2018</span></h2>
-					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">UI/UX Designer at Envato</a> <span>2017-2018</span></h2>
-					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-					               </div>
-					            </div>
-					         </article> -->
 
 					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
 					            <div class="timeline-entry-inner">
@@ -435,27 +312,30 @@
 						</div>
 					</div>
 					<div class="row">
-							<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-								{% for posts in post %}
-								<div class="blog-entry">
-									<a class="blog-img"><img src="{{ posts.image.url }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-									<div class="desc">
-										<span><small></small>  <small> <i class="icon-bubble3"></i> 5</small></span>
-										<h3><a >{{ posts.title }}</a></h3>
-										<p>{{ posts.body|truncatechars:100 }}</p>
-									</div>
+						{% for posts in post %}
+						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="blog-entry">
+								<a class="blog-img"><img src="{{ posts.image.url }}" class="img-responsive" alt="Blog Image"></a>
+								<div class="desc">
+									<span><small></small> <small> <i class="icon-bubble3"></i> 5</small></span>
+									<h3><a href="{% url 'post_list' %}">{{ posts.title }}</a></h3>
+									<p>{{ posts.body|truncatechars:100 }}</p>
 								</div>
-								{% endfor %}
 							</div>
-						
-						
+						</div>
+						{% endfor %}
+					
+					</div>
 					<div class="row">
 						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more"><i class="icon-reload">To'liq ko'rish</i></a></p>
-						</div>
+							<p><a href="{% url 'post_list' %}" class="btn btn-primary btn-lg btn-load-more">
+								<i class="icon-reload"></i> To'liq ko'rish
+							</a></p>
+						</div>						
 					</div>
 				</div>
 			</section>
+			
 
 			<section class="colorlib-contact" data-section="contact">
 				<div class="colorlib-narrow-content">
@@ -481,7 +361,7 @@
 									<i class="icon-instagram"></i>
 								</div>
 								<div class="colorlib-text">
-									<p><a href="orzimurod1819">Instagram</a></p>
+									<p><a href="https://www.instagram.com/orzimurod1819">Instagram</a></p>
 								</div>
 							</div>
 

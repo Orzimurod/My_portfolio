@@ -1,35 +1,97 @@
-{% extends "base.html" %}
+
 {% load static %}
 
-{% block content %}
-    <section class="colorlib-blog" data-section="blog">
-        <div class="colorlib-narrow-content">
+{% comment %} {% block content %} {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>STANLEY - Free Bootstrap Theme </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'posts/css/bootstrap.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'posts/css/main.css' %}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'home' %}">
+                        <i class="fa-solid fa-house"></i> Bosh Sahifa </a></li>
+            </div><!--/.nav-collapse -->  </ul>
+        </div>
+      </div>
+    </div>
+
+	<!-- +++++ Posts Lists +++++ -->
+	<!-- +++++ First Post +++++ -->
+	<div id="grey">
+        {% for post in post_all %}
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p><img src="{{ post.image.url }}" width="400px" height="350px"> <ba></ba></p>
+					{% comment %} <p><bd>{{ post.published_date }}</bd></p> {% endcomment %}
+					<h4>{{ post.title }}</h4>
+					<p>{{ post.body }}</p>
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+        {% endfor %}
+	</div><!-- /grey -->
+
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-                    <span class="heading-meta">O'qing</span>
-                    <h2 class="colorlib-heading">mening postlarim</h2>
-                </div>
-            </div>
-            <div class="row">
-                    <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                        {% for posts in post %}
-                        <div class="blog-entry">
-                            <a class="blog-img"><img src="{{ posts.image.url }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                            <div class="desc">
-                                <span><small>April 14, 2018 </small> | <small>  </small> | <small> <i class="icon-bubble3"></i> 5</small></span>
-                                <h3><a >{{ posts.title }}</a></h3>
-                                <p>{{ posts.body }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                
-                
-            <div class="row">
-                <div class="col-md-12 animate-box">
-                    <p><a href="{% url 'home'  %}" class="btn btn-primary btn-lg btn-load-more">bosh sahifaga qaytish <i class="icon-reload"></i></a></p>
-                </div>
+                <div class="col-lg-4">
+                    
+                </div><!-- /col-lg-4 -->
             </div>
         </div>
-    </section>
-{% endblock content %}
+    </div>
+    
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'posts/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
+
+{% comment %} {% endblock content %} {% endcomment %}
