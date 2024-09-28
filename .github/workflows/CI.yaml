@@ -1,0 +1,36 @@
+name: My_portfolio Backend
+
+on:
+  push:
+    banches:
+      -main
+
+  pull_request:
+    branches:
+    -main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - users: actions/checkout@v2
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run:
+          python3 -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+      - name: Lint with flake8
+        run:
+          pip install flake8
+          flake8
+      - name: Run tests with coverage
+        env: 
+          SECRET_KEY: ${{secrets.SECRET_KEY}}
+          DEBUG: ${{secrets.DEBUG}}
+
+
+        run:
+          python manage.py test
