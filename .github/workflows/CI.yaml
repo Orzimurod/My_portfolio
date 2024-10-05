@@ -56,10 +56,10 @@ jobs:
 
       - name: Add server to known hosts
         run: |
-          ssh-keyscan -H SERVER_IP >> ~/.ssh/known_hosts
+          ssh-keyscan -H 46.101.74.178 >> ~/.ssh/known_hosts
         shell: bash
 
       - name: Deploy to Server
         run: |
-          ssh root@SERVER_IP "cd ../home/My_portfolio && git pull && ./deploy.sh"
+          ssh root@46.101.74.178 "cd ../home/My_portfolio && git pull && ./deploy.sh"
         shell: bash
