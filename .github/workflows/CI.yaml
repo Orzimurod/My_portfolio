@@ -30,36 +30,36 @@ jobs:
         run: |
           python manage.py test
 
-deploy:
-  runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
 
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Add SSH key
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-      shell: bash
+      - name: Add SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+        shell: bash
 
-    - name: Add server to known hosts
-      run: |
-        ssh-keyscan -H SERVER_IP >> ~/.ssh/known_hosts
-      shell: bash
+      - name: Add server to known hosts
+        run: |
+          ssh-keyscan -H SERVER_IP >> ~/.ssh/known_hosts
+        shell: bash
 
-    - name: Deploy to Server
-      run: |
-        ssh root@SERVER_IP "cd ../home/My_portfolio && git pull && ./deploy.sh"
-      shell: bash
+      - name: Deploy to Server
+        run: |
+          ssh root@SERVER_IP "cd ../home/My_portfolio && git pull && ./deploy.sh"
+        shell: bash
